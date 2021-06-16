@@ -23,7 +23,7 @@ on:
   pull_request:
     branches:
     - main
-    paths-ignore"
+    paths-ignore:
     - 'README.md'
   workflow_dispatch:
     inputs:
