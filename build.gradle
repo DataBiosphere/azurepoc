@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.4.7'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'com.google.cloud.tools.jib' version '3.1.1'
 	id 'java'
 }
 
@@ -19,4 +20,11 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+
+jib {
+	from {
+		image = "us.gcr.io/broad-dsp-gcr-public/base/jre:11-debian"
+	}
 }
