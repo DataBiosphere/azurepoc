@@ -104,7 +104,6 @@ jobs:
         image: ${{ steps.image-name.outputs.name }}
     - name: Push GCR image
       run: "docker push ${{ steps.image-name.outputs.name }}"
-    add this back once ready to deploy to helmfile
     - name: Deploy to Terra Dev environment
       if: github.event_name == 'push'
       uses: broadinstitute/repository-dispatch@master
