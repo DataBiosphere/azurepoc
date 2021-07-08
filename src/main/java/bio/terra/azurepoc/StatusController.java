@@ -12,7 +12,7 @@ public class StatusController {
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/status")
-    public Status status(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public Status status(@RequestParam(value = "name", defaultValue = ", and this still works!") String name) {
         return new Status(true,
         String.format(template, name),
         counter.incrementAndGet());
