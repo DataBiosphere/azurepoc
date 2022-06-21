@@ -62,7 +62,7 @@ jobs:
         ref: ${{ steps.controls.outputs.checkout-branch }}
         token: ${{ secrets.BROADBOT_TOKEN }}
     - name: Bump the tag to a new version
-      uses: databiosphere/github-actions/actions/bumper@bumper-0.0.3
+      uses: databiosphere/github-actions/actions/bumper@bumper-0.0.6
       id: tag
       env:
         DEFAULT_BUMP: patch
@@ -83,7 +83,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Auth to GCR
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@v0
       with:
         version: '290.0.1'
         service_account_email: ${{ secrets.GCR_PUBLISH_EMAIL }}
